@@ -1,0 +1,15 @@
+{
+  "name": "automatic-mailing-feature",
+  "version": "1.0.0",
+  "description": "sample app using nodemailer",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Sarag Mohan P",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemailer": "^6.7.2"
+  }
+}

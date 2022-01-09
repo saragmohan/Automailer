@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+<style>
+    #emailSec{
+        position: absolute;
+        left:40%;
+        top:30%;
+    }
+    .emailFont{
+        font-size: 40px;
+    }
+
+    #email{
+        position: absolute;
+        left:35%;
+        top:40%;
+        font-size: 40px;
+    }
+
+    #email:focus{
+        background-color: lightblue;
+        border-radius: 4px;
+    }
+
+    #error{
+        position: absolute;
+        left:43%;
+        top:50%;
+        font-size: 40px;
+    }
+
+    #submit{
+        position: absolute;
+        left:43%;
+        top:60%;
+        font-size: 40px;
+    }
+
+    .navbar{
+            padding-left: 45%;
+            font-size: 20px;
+        }
+</style>
+</head>
+
+<body>
+
+    <body style="background-color:grey">
+
+        <nav class="navbar">
+            <a href="./index.html">Welcome</a>
+            <a href="./home.html">Home</a>
+        </nav>
+        <form action="/mailer" onsubmit="return validate()">
+            <div>
+                <label for="email" class="emailFont" id="emailSec">Enter your email id</label>
+                <br><br>
+                <input type="text" Placeholder="Enter your email" name="email" id="email">
+                <br/>
+                <label for="error" id="error"></label>
+           
+                 <br/>
+                <button id="submit">Send Email</button>
+            </div>
+        </form>
+    <script>
+    let email = document.getElementById("email");
+    let error = document.getElementById("error");
+
+    function validate() {
+        let regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
+        if (regexp.test(email.value)==true) {
+        error.innerHTML = "Valid";
+        error.style.color = "green";
+        return true;
+        }
+        else {
+        error.innerHTML = "Invalid email address";
+        error.style.color = "red";
+        return false;
+         }
+    }
+    </script>
+</body>
+
+</html>
