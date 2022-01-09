@@ -52,6 +52,6 @@ app.get('/mailer', (req, res) => {
 
 
 
-app.listen(3334, function () {
+app.listen(process.env.PORT || 5000, () => {
     console.log('Server started...');
 });
